@@ -1,0 +1,42 @@
+### Get All Contacts
+GET http://localhost:10000/contacts
+### Get Single Contact
+GET http://localhost:10000/contacts/63c0491f9905c7fb30b1a739
+
+### Create New LocalHost Contact
+POST http://localhost:10000/contacts HTTP/1.1 
+content-type: application/json
+
+{"firstName":"James", "lastName":"Bond", "email":"jbond@test.com", "favoriteColor":"Blue", "birthday":"02/21/1989"}
+
+### Update Existing LocalHost Contact
+PUT http://localhost:10000/contacts/63cc414a2da1bf2694e1efb1 HTTP/1.1 
+content-type: application/json
+
+{"firstName":"John", "lastName":"Carter", "email":"cartier@test.com", "favoriteColor":"Black", "birthday":"11/05/1942"}
+
+### Delete LocalHost Contact
+DELETE http://localhost:10000/contacts/63cc414a2da1bf2694e1efb1 HTTP/1.1
+
+
+
+
+
+
+
+
+### Create New Render Contact
+POST https://cse-341-pk.onrender.com/contacts HTTP/1.1 
+content-type: application/json
+
+{"firstName":"James", "lastName":"Bond", "email":"jbond@test.com", "favoriteColor":"Blue", "birthday":"02/21/1989"}
+
+### Update Existing Render Contact
+PUT https://cse-341-pk.onrender.com/contacts/63cc4219f06c9249588aa75a HTTP/1.1 
+content-type: application/json
+
+{"firstName":"John", "lastName":"Carter", "email":"cartier@test.com", "favoriteColor":"Black", "birthday":"11/05/1942"}
+
+### Delete Render Contact
+DELETE https://cse-341-pk.onrender.com/contacts/63cc4219f06c9249588aa75a HTTP/1.1/contacts HTTP/1.1 
+content-type: application/json

@@ -1,0 +1,33 @@
+{
+  "name": "cse341-apicourse-code",
+  "version": "1.0.0",
+  "description": "code to give to students for the cse341 course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "swagger": "node ./swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PKwhiting/CarRentalApp"
+  },
+  "author": "Patten Whiting",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PKwhiting/CarRentalApp"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "qs": "^6.11.0",
+    "require": "^2.4.20",
+    "safe-buffer": "^5.2.1",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.22.0"
+  }
+}

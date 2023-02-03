@@ -23,7 +23,7 @@
     "express": "^4.18.2",
     "mongodb": "^4.13.0",
     "qs": "^6.11.0",
-    "require": "^2.4.20",
+    "require": "^0.4.4",
     "safe-buffer": "^5.2.1",
     "swagger-ui-express": "^4.6.0"
   },

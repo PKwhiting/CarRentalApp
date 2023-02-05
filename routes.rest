@@ -1,42 +1,52 @@
-### Get All Contacts
-GET http://localhost:10000/contacts
-### Get Single Contact
-GET http://localhost:10000/contacts/63c0491f9905c7fb30b1a739
+### Get All Users
+GET http://localhost:10000/users
+### Get Single User
+GET http://localhost:10000/users/63dd2feb935397b9893ab538
 
-### Create New LocalHost Contact
-POST http://localhost:10000/contacts HTTP/1.1 
+### Get All Vehicles
+GET http://localhost:10000/vehicles
+### Get Single Vehicle
+GET http://localhost:10000/vehicles/63dd27a0ad81f37548efa9f8
+
+### Create New LocalHost user
+POST http://localhost:10000/users/ HTTP/1.1 
 content-type: application/json
 
-{"firstName":"James", "lastName":"Bond", "email":"jbond@test.com", "favoriteColor":"Blue", "birthday":"02/21/1989"}
+{"firstName":"James", "lastName":"Bond", "username":"jbondy", "password":"bluepass", "hoursRemaining":5}
 
-### Update Existing LocalHost Contact
-PUT http://localhost:10000/contacts/63cc414a2da1bf2694e1efb1 HTTP/1.1 
+
+### Create New LocalHost Vehicles
+POST http://localhost:10000/vehicles/ HTTP/1.1 
 content-type: application/json
 
-{"firstName":"John", "lastName":"Carter", "email":"cartier@test.com", "favoriteColor":"Black", "birthday":"11/05/1942"}
-
-### Delete LocalHost Contact
-DELETE http://localhost:10000/contacts/63cc414a2da1bf2694e1efb1 HTTP/1.1
+{"year":"2022", "make":"Chevrolet", "model":"bolt", "mileage":20000, "remainingRange":120, "currentlyRented": false, "broken": false}
 
 
 
 
 
 
+### Get All Users Render
+GET https://carrentalapp.onrender.com/users
+### Get Single User Render
+GET https://carrentalapp.onrender.com/users/63dd2feb935397b9893ab538
 
+### Get All Vehicles Render
+GET https://carrentalapp.onrender.com/vehicles
+### Get Single Vehicle Render
+GET https://carrentalapp.onrender.com/vehicles/63dd27a0ad81f37548efa9f8
 
-### Create New Render Contact
-POST https://cse-341-pk.onrender.com/contacts HTTP/1.1 
+### Create New user Render
+POST https://carrentalapp.onrender.com/users/ HTTP/1.1 
 content-type: application/json
 
-{"firstName":"James", "lastName":"Bond", "email":"jbond@test.com", "favoriteColor":"Blue", "birthday":"02/21/1989"}
+{"firstName":"James", "lastName":"Bond", "username":"jbondy", "password":"bluepass", "hoursRemaining":5}
 
-### Update Existing Render Contact
-PUT https://cse-341-pk.onrender.com/contacts/63cc4219f06c9249588aa75a HTTP/1.1 
+
+### Create New Vehicle Render
+POST https://carrentalapp.onrender.com//vehicles/ HTTP/1.1 
 content-type: application/json
 
-{"firstName":"John", "lastName":"Carter", "email":"cartier@test.com", "favoriteColor":"Black", "birthday":"11/05/1942"}
+{"year":"2022", "make":"Chevrolet", "model":"bolt", "mileage":20000, "remainingRange":120, "currentlyRented": false, "broken": false}
 
-### Delete Render Contact
-DELETE https://cse-341-pk.onrender.com/contacts/63cc4219f06c9249588aa75a HTTP/1.1/contacts HTTP/1.1 
-content-type: application/json
+

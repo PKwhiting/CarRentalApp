@@ -24,7 +24,7 @@
     },
     "/users/": {
       "get": {
-        "description": "",
+        "description": "Gets all users",
         "produces": [
           "application/json"
         ],
@@ -36,7 +36,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create new user",
         "parameters": [
           {
             "name": "body",
@@ -75,7 +75,7 @@
     },
     "/users/{id}": {
       "get": {
-        "description": "",
+        "description": "Get individual user",
         "produces": [
           "application/json"
         ],
@@ -94,19 +94,19 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Edit individual user",
         "parameters": [],
         "responses": {}
       },
       "delete": {
-        "description": "",
+        "description": "Delete individual user",
         "parameters": [],
         "responses": {}
       }
     },
     "/vehicles/": {
       "get": {
-        "description": "",
+        "description": "Get all vehicles",
         "produces": [
           "application/json"
         ],
@@ -118,7 +118,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create new vehicle",
         "parameters": [
           {
             "name": "body",
@@ -163,7 +163,7 @@
     },
     "/vehicles/{id}": {
       "get": {
-        "description": "",
+        "description": "Get individual vehicle",
         "produces": [
           "application/json"
         ],
@@ -182,12 +182,12 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Edit individual vehicle",
         "parameters": [],
         "responses": {}
       },
       "delete": {
-        "description": "",
+        "description": "Delete individual vehicle",
         "parameters": [],
         "responses": {}
       }

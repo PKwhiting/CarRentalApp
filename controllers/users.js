@@ -37,49 +37,49 @@ const createNewUser = async (req, res) => {
 };
 
 
-/*  const updateCurrentContact = async (req, res) => {
+  const updateCurrentUser = async (req, res) => {
     const userId = new ObjectId(req.params.id);
-    const { firstName, lastName, email, favoriteColor, birthday } = req.body;
+    const { firstName, lastName, username, password, hoursRemaining } = req.body;
     const update = {
       $set: {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
-        favoriteColor: req.body.favoriteColor,
-        birthday: req.body.birthday
+        username: req.body.username,
+        password: req.body.password,
+        hoursRemaining: req.body.hoursRemaining
       }
     };
     try {
       let db = await mongodb.getDb()
-      const contact = await db.db("CSE341-NODE").collection('Contacts').findOne({ _id: userId });
+      const contact = await db.db("CarRentalApp").collection('users').findOne({ _id: userId });
       if(!contact){
-        res.status(404).send('Contact not found');
+        res.status(404).send('User not found');
       }else{
-        const result = await db.db("CSE341-NODE").collection('Contacts').updateOne({ _id: userId }, update);
+        const result = await await db.db("CarRentalApp").collection('users').updateOne({ _id: userId }, update);
         if (result.modifiedCount > 0) {
             res.status(204).send();
         } else {
-          res.status(404).send('Contact not found');
+          res.status(404).send('User not found');
         }
     }
     } catch (error) {
       console.log(error);
-      res.status(500).json({ error: "Error updating contact" });
+      res.status(500).json({ error: "Error updating user" });
     }
   };
 
-  const deleteCurrentContact = async (req, res) => {
+  const deleteCurrentUser = async (req, res) => {
     try {
       const userId = new ObjectId(req.params.id);
       let db = await mongodb.getDb()
-      const result = await db.db("CSE341-NODE").collection('Contacts').deleteOne({ _id: userId });
+      const result = await db.db("CarRentalApp").collection('users').deleteOne({ _id: userId });
       if (result.deletedCount > 0) {
         res.status(200).send();
       } else {
-        res.status(404).send('Contact not found');
+        res.status(404).send('User not found');
       }
     } catch (err) {
-      res.status(500).json(err.message || 'Some error occurred while deleting the contact.');
+      res.status(500).json(err.message || 'Some error occurred while deleting the user.');
     }
-  };*/
-module.exports = { getAllUsers, getSingleUser, createNewUser };
+  };
+module.exports = { getAllUsers, getSingleUser, createNewUser, updateCurrentUser, deleteCurrentUser };

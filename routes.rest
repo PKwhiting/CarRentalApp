@@ -22,6 +22,25 @@ content-type: application/json
 {"year":"2022", "make":"Chevrolet", "model":"bolt", "mileage":20000, "remainingRange":120, "currentlyRented": false, "broken": false}
 
 
+### Update Existing LocalHost User
+PUT http://localhost:10000/users/63def8f667eaa323d0cc5ee9 HTTP/1.1 
+content-type: application/json
+
+{"firstName":"James", "lastName":"Bond", "username":"jbondy", "password":"bluepass", "hoursRemaining":5}
+
+### Delete LocalHost User
+DELETE http://localhost:10000/users/63dd2a070a417a7e957aba61 HTTP/1.1
+
+### Update Existing LocalHost Vehicle
+PUT http://localhost:10000/vehicles/63def93567eaa323d0cc5eeb HTTP/1.1 
+content-type: application/json
+
+{"year":"2022", "make":"Chevrolet", "model":"bolt", "mileage":20000, "remainingRange":120, "currentlyRented": false, "broken": false}
+
+### Delete LocalHost Vehicle
+DELETE http://localhost:10000/vehicles/63def93267eaa323d0cc5eea HTTP/1.1
+
+
 
 
 

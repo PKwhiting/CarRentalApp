@@ -8,7 +8,7 @@ router.get('/:id', usersController.getSingleUser);
 
 router.post('/', usersController.createNewUser);
 
-//router.put('/:id', contactsController.updateCurrentContact);
+router.put('/:id', usersController.updateCurrentUser);
 
-//router.delete('/:id', contactsController.deleteCurrentContact);
+router.delete('/:id', usersController.deleteCurrentUser);
 module.exports = router;

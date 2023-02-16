@@ -23,7 +23,7 @@ content-type: application/json
 
 
 ### Update Existing LocalHost User
-PUT http://localhost:10000/users/63def8f667eaa323d0cc5ee9 HTTP/1.1 
+PUT http://localhost:10000/users/63ee5fb5a8b8afa925ac657b HTTP/1.1 
 content-type: application/json
 
 {"firstName":"James", "lastName":"Bond", "username":"jbondy", "password":"bluepass", "hoursRemaining":5}

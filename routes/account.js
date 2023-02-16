@@ -20,6 +20,17 @@ app.set('view engine', 'pug');
         res.status(500).send('Error getting user');
       });
   });
+
+  router.post('/:id', (req, res, next) => {
+    usersController.updateUser(req, req.body)
+        .then(() => {
+            res.redirect('/users');
+        })
+        .catch(err => {
+            res.status(500).send('Error updating user');
+        });
+});
+
   
 
 

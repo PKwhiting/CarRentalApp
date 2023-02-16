@@ -7,6 +7,10 @@ const port = process.env.PORT || 10000;
 const path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
 app.use('/', require('./routes'))
 
 app.get('/styles/index.css', (req, res) => {

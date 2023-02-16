@@ -1,10 +1,12 @@
-form(method='post' action='/update-user')
-  p(value=user)
-  input(type='hidden' name='userId' value=userId)
-  label(for='name') Name:
-  input(type='text' name='name' value=user.first_name)
-  label(for='email') Email:
-  input(type='text' name='email' value=user.username)
+form(method='POST' action=`/account/${user[0]._id}`)
+  input(type='hidden' name='id' value=user[0]._id)
+  label(for='firstName') First Name:
+  input(type='text' name='firstName' value=user[0].first_name)
+  label(for='lastName') Last Name:
+  input(type='text' name='lastName' value=user[0].last_name)
+  label(for='username') Username:
+  input(type='text' name='username' value=user[0].username)
+  label(for='password') Password:
+  input(type='text' name='password' value=user[0].password)
   button(type='submit') Update User
-link(rel="stylesheet", href="../styles/index.css", type="text/css")
- 
+  link(rel="stylesheet", href="../styles/index.css", type="text/css")

@@ -1,0 +1,7 @@
+form(method='post' action='/update-user')
+  input(type='hidden' name='userId' value=userId)
+  label(for='name') Name:
+  input(type='text' name='name' value=user.name)
+  label(for='email') Email:
+  input(type='text' name='email' value=user.email)
+  button(type='submit') Update User

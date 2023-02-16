@@ -7,5 +7,6 @@ routes.get('/', (req, res) => {
 });
 routes.use('/users', require('./users'))
 routes.use('/vehicles', require('./vehicles'))
+routes.use('/account', require('./account'))
 routes.use('/', require('./swagger'))
 module.exports = routes;

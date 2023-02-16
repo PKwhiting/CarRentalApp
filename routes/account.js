@@ -1,20 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../controllers/users');
-const app = express(); // create an instance of express app
-app.set('view engine', 'pug'); // set the view engine for the app
+const usersController = require('../controllers/account');
+const app = express(); 
+const path = require('path');
+app.set('views', path.join(__dirname, '../views'));
+app.set('view engine', 'pug');
 
 
-router.get('/:userId', async (req, res) => {
-    try {
-      const userId = req.params.userId;
-      const user = await usersController.getsingleuser(userId);
-      res.render('edit-user', { user });
-    } catch (err) {
-      res.status(500).send('Error retrieving user data');
-    }
-});
+  router.get('/:id', (req, res, next) => {
+    usersController.getSingleUser(req, res)
+      .then(user => {
+        if (user) {
+          res.render('edit-user', { user });
+        } else {
+          res.status(404).send('User not found');
+        }
+      })
+      .catch(err => {
+        res.status(500).send('Error getting user');
+      });
+  });
   
+
 
 
 module.exports = router;

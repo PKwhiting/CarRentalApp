@@ -27,14 +27,16 @@ const getSingleUser = async (req, res, next) => {
     const result = db.db("CarRentalApp").collection('users').find({ _id: userId });
     const lists = await result.toArray();
     if (!lists || lists.length === 0) {
-      res.status(404).send('User not found');
+      return res.status(404).send('User not found');
+      
     } else {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
+      return res.status(200).json(lists[0]);
+
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Error fetching user" });
+    //return res.status(500).json({ error: "Error fetching user" });
   }
 };
 

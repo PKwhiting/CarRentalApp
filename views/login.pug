@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Login
+    link(rel='stylesheet', href='style.css')
+  body
+    form(method='post', action='/auth/oauth')
+      h2 Login with OAuth
+      p Choose your OAuth provider below to sign in:
+      .oauth-buttons
+        a.oauth-button(href='/auth/google')
+          img(src='/images/google.png', alt='Google')
+        a.oauth-button(href='/auth/facebook')
+          img(src='/images/facebook.png', alt='Facebook')
+        a.oauth-button(href='/auth/twitter')
+          img(src='/images/twitter.png', alt='Twitter')
+    form(method='post', action='/login')
+      h2 Login with username and password
+      label(for='email') Email:
+      input(type='email', name='email', required)
+      label(for='password') Password:
+      input(type='password', name='password', required)
+      input(type='submit', value='Log in')
+  link(rel="stylesheet", href="../styles/index.css", type="text/css")

@@ -13,7 +13,6 @@ const getSingleUser = async (req, res, next) => {
       const result = db.db("CarRentalApp").collection('users').find({ _id: userId });
       const lists = await result.toArray();
       if (!lists || lists.length === 0) {
-        //return res.status(404).send('User not found');
         
       } else {
         return lists;
@@ -21,7 +20,6 @@ const getSingleUser = async (req, res, next) => {
       }
     } catch (error) {
       console.log(error);
-      //return res.status(500).json({ error: "Error fetching user" });
     }
   };
 
@@ -62,13 +60,11 @@ const getSingleUser = async (req, res, next) => {
   
       const result = await db.db("CarRentalApp").collection('users').updateOne({ _id: new ObjectId(userId) }, update);
       if (result.modifiedCount > 0) {
-        //res.status(204).send();
       } else {
         console.log("User not found");
       }
     } catch (error) {
       console.log(error);
-      //res.status(500).json({ error: "Error updating user" });
     }
   };
   

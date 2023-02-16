@@ -6,6 +6,10 @@ const path = require('path');
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 
+router.get('/', (req, res) => {
+  res.render('login');
+});
+
 
   router.get('/:id', (req, res, next) => {
     usersController.getSingleUser(req, res)

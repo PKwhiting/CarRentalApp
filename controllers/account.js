@@ -44,8 +44,8 @@ const getSingleUser = async (req, res, next) => {
   
       const update = {
         $set: {
-          first_name: firstName,
-          last_name: lastName,
+          firstName: firstName,
+          lastName: lastName,
           username: username,
           password: password
         }

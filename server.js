@@ -18,6 +18,10 @@ app.get('/styles/index.css', (req, res) => {
     res.sendFile('styles/index.css', { root: __dirname });
   });
 
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+  })
+
 app.listen(port, () => {
     console.log(`Running on port ${port}`)
 })

@@ -18,6 +18,11 @@ app.get('/styles/index.css', (req, res) => {
     res.sendFile('styles/index.css', { root: __dirname });
   });
 
+  app.get('/js/script.js', (req, res) => {
+    res.setHeader('Content-Type', 'text/javascript');
+    res.sendFile('js/script.js', { root: __dirname });
+  });
+
 app.get('/', (req, res) => {
     res.sendStatus(200)
   })

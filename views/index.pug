@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Car Rental App - Home
+    link(rel="stylesheet", href="../styles/index.css", type="text/css")
+    
+    main
+        #authorized
+          p This is authorized content
+          footer
+          form(action="/logout" method="POST")
+              button(type="submit") Logout
+        #unauthorized 
+            p You need to log in to access this content.
+            form(action="/account" method="GET")
+              button(type="submit") Login
+
+
+    script. 
+        const URL_PARAMS = new URLSearchParams(window.location.search);
+        const TOKEN = URL_PARAMS.get('token');
+        console.log(TOKEN);
+        if(TOKEN){
+            document.getElementById("authorized").style.display = 'block';
+            document.getElementById("unauthorized").style.display = 'none';
+        }
+        else {
+            document.getElementById("authorized").style.display = 'none';
+            document.getElementById("unauthorized").style.display = 'block';
+        }
+        

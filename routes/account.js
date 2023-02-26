@@ -14,12 +14,9 @@ router.get('/', (req, res) => {
 
 
 
-router.get('/auth', (req,res) =>{
-  res.redirect(
-    `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}`
-  )
-});
-router.get('/oauth-callback', ({ query: { code } } , res) => {
+
+
+app.get('/oauth-callback', ({ query: { code } }, res) => {
   const body = {
     client_id: process.env.CLIENT_ID,
     client_secret: process.env.CLIENT_SECRET,
@@ -36,6 +33,13 @@ router.get('/oauth-callback', ({ query: { code } } , res) => {
     })
     .catch((err) => res.status(500).json({ err: err.message}))
 })
+
+
+router.get('/auth', (req,res) =>{
+  res.redirect(
+    `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}`
+  )
+});
 
 
 

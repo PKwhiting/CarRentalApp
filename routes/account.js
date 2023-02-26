@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 
 
-app.get('/oauth-callback', ({ query: { code } }, res) => {
+router.get('/oauth-callback', ({ query: { code } }, res) => {
   const body = {
     client_id: process.env.CLIENT_ID,
     client_secret: process.env.CLIENT_SECRET,

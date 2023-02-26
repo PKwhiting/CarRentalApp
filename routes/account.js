@@ -19,7 +19,7 @@ router.get('/auth', (req,res) =>{
     `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}`
   )
 });
-router.get('/oath-callback', ({ query: { code } } , res) => {
+router.get('/oauth-callback', ({ query: { code } } , res) => {
   const body = {
     client_id: process.env.CLIENT_ID,
     client_secret: process.env.CLIENT_SECRET,
